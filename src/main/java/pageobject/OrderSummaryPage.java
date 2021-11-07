@@ -28,7 +28,7 @@ public class OrderSummaryPage extends AbstractPage{
     }
 
     public String getSummaryTitle() {
-        wait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='product_2_7_0_581654']//p[@class='product-name']/a")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='product_2_7_0_581654']//p[@class='product-name']/a")));
         String summaryTitleText = summaryTitle.getText();
         return summaryTitleText;
     }

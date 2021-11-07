@@ -2,15 +2,12 @@ package pageobject;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import util.DataGenerator;
-import util.PropReader;
+import utilites.DataGenerator;
 
 import java.util.List;
-import java.util.Map;
 
 public class RegistrationPage extends AbstractPage{
 
