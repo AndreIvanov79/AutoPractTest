@@ -29,6 +29,7 @@ public class PurchaseItemTest {
         driver = new ChromeDriver();
         loginPage = new LogInPage(driver);
         userHomePage=new UserHomePage(driver);
+        catalogPage=new CatalogPage(driver);
         confirmAddressPage=new ConfirmAddressPage(driver);
         orderConfirmationPage=new OrderConfirmationPage(driver);
         orderHistoryPage=new OrderHistoryPage(driver);
@@ -55,9 +56,10 @@ public class PurchaseItemTest {
         Assert.assertEquals(PropReader.getProperty("username"), user);
 
         userHomePage.clickWomenCategoryButton();
-        actions.moveToElement(userHomePage.getItemImage()).build().perform();
-        userHomePage.clickInStockButton();
-        userHomePage.clickCheckOutButton();
+
+        actions.moveToElement(catalogPage.getBlouseImage()).build().perform();
+        catalogPage.clickAddToCartButton();
+        catalogPage.clickCheckOutButton();
 
         shoppingCartSummaryPage.clickProceedCheckoutButton();
 
@@ -75,11 +77,13 @@ public class PurchaseItemTest {
         String history = orderHistoryPage.getOrderHistoryTitle();
 
         Assert.assertEquals(PropReader.getProperty("orderhistory"), history);
+
+        orderHistoryPage.clickBackToAccount();
     }
 
     @AfterClass
     public static void tearDown() {
-        orderHistoryPage.clickLogoutButton();
+        userHomePage.clickLogoutButton();
         driver.quit(); }
 
 }
