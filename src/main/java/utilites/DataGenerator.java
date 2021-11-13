@@ -47,4 +47,5 @@ public class DataGenerator {
     public static String generateRandomNumber() {
         return "" + RANDOM.nextInt(9999);
     }
+
 }

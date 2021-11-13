@@ -14,7 +14,6 @@ public class OrderConfirmationPage extends AbstractPage{
 
     public OrderConfirmationPage(WebDriver driver){
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//*[@id='center_column']/h1")
@@ -23,8 +22,8 @@ public class OrderConfirmationPage extends AbstractPage{
     @FindBy(xpath = "//a[@title='Back to orders']")
     private WebElement backButton;
 
-    public void clickBackButton(){
-        backButton.click();
+    public WebElement getBackButton(){
+        return backButton;
     }
 
     public String getOrderConfTitle() {

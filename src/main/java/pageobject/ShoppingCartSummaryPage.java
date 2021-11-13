@@ -14,7 +14,6 @@ public class ShoppingCartSummaryPage extends AbstractPage{
 
     public ShoppingCartSummaryPage(WebDriver driver){
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//*[@id='product_2_7_0_581654']//p[@class='product-name']/a")

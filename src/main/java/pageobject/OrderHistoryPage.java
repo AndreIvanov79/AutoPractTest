@@ -14,7 +14,6 @@ public class OrderHistoryPage extends AbstractPage{
 
     public OrderHistoryPage(WebDriver driver){
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//*[@class='logout']")

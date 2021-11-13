@@ -13,7 +13,6 @@ public class RegistrationPage extends AbstractPage{
 
     public RegistrationPage(WebDriver driver){
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     @FindBy(id = "uniform-id_gender1")
@@ -60,6 +59,10 @@ public class RegistrationPage extends AbstractPage{
 
     @FindBy(id = "submitAccount")
     private WebElement submitButton;
+
+    public WebElement getSubmitButton(){
+        return submitButton;
+    }
 
     String newFirstName=DataGenerator.generateRandomString(6);
     String newLastName=DataGenerator.generateRandomString(6);

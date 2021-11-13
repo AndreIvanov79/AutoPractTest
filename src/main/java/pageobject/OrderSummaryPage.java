@@ -11,7 +11,6 @@ public class OrderSummaryPage extends AbstractPage{
 
     public OrderSummaryPage(WebDriver driver){
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//*[@id='center_column']/h1")
@@ -20,8 +19,8 @@ public class OrderSummaryPage extends AbstractPage{
     @FindBy(xpath = "//*[@id='cart_navigation']/button[@type='submit']")
     private WebElement confirmButton;
 
-    public void clickConfirmButton(){
-        confirmButton.click();
+    public WebElement getConfirmButton(){
+        return confirmButton;
     }
 
     public String getSummaryTitle() {

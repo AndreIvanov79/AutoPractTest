@@ -14,7 +14,6 @@ public class ShippingPage extends AbstractPage{
 
     public ShippingPage(WebDriver driver){
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     @FindBy(id = "cgv")

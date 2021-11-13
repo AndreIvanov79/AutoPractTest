@@ -16,7 +16,6 @@ public class UserHomePage extends AbstractPage{
 
     public UserHomePage(WebDriver driver){
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//*[@id='block_top_menu']//a[@title='Women']")
@@ -37,10 +36,13 @@ public class UserHomePage extends AbstractPage{
     @FindBy(xpath = "//*[@class='logout']")
     private WebElement logoutButton;
 
-    public WebElement getItemImage(){
-        return itemImage;
+    public WebElement getWomenCategory(){
+        return womenCategory;
     }
 
+    public WebElement getLogoutButton(){
+        return logoutButton;
+    }
 
     public String getUserName() {
         String userName = loggedUserName.getText();

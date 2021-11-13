@@ -47,43 +47,43 @@ public class PurchaseItemTest {
 
     @Test
     public void purchaseItemTest() {
-        loginPage.clickSignInOnMainPage();
-        loginPage.inputEmailO();
+        loginPage.clickIt(loginPage.getLoginButton());
+        loginPage.inputEmail();
         loginPage.inputPassword();
-        loginPage.clickSignInButton();
+        loginPage.clickIt(loginPage.getSignInButton());
 
         String user = userHomePage.getUserName();
         Assert.assertEquals(PropReader.getProperty("username"), user);
 
-        userHomePage.clickWomenCategoryButton();
+        userHomePage.clickIt(userHomePage.getWomenCategory());
 
         actions.moveToElement(catalogPage.getBlouseImage()).build().perform();
-        catalogPage.clickAddToCartButton();
-        catalogPage.clickCheckOutButton();
+        catalogPage.clickIt(catalogPage.getAddToCartButton());
+        catalogPage.clickIt(catalogPage.getCheckoutButton());
 
-        shoppingCartSummaryPage.clickProceedCheckoutButton();
+        shoppingCartSummaryPage.clickIt(shoppingCartSummaryPage.getProceedChekoutButton());
 
-        confirmAddressPage.clickProceedCheckoutButton();
+        confirmAddressPage.clickIt(confirmAddressPage.getCheckoutButton());
 
-        shippingPage.clickCheckBox();
-        shippingPage.clickProceedCheckoutButton();
+        shippingPage.clickAgreeCheckBox();
+        shippingPage.clickIt(shippingPage.getCheckoutButton());
 
-        payMethodPage.clickPayMethod();
+        payMethodPage.clickIt(payMethodPage.getPayMethod());
 
-        orderSummaryPage.clickConfirmButton();
+        orderSummaryPage.clickIt(orderSummaryPage.getConfirmButton());
 
-        orderConfirmationPage.clickBackButton();
+        orderConfirmationPage.clickIt(orderConfirmationPage.getBackButton());
 
         String history = orderHistoryPage.getOrderHistoryTitle();
 
         Assert.assertEquals(PropReader.getProperty("orderhistory"), history);
 
-        orderHistoryPage.clickBackToAccount();
+        orderHistoryPage.clickIt(orderHistoryPage.getBackToAccount());
     }
 
     @AfterClass
     public static void tearDown() {
-        userHomePage.clickLogoutButton();
+        userHomePage.clickIt(userHomePage.getLogoutButton());
         driver.quit(); }
 
 }

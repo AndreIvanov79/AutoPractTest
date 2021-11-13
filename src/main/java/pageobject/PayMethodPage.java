@@ -14,7 +14,6 @@ public class PayMethodPage extends AbstractPage{
 
     public PayMethodPage(WebDriver driver){
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//*[@id='center_column']/h1")
@@ -23,9 +22,8 @@ public class PayMethodPage extends AbstractPage{
     @FindBy(className = "bankwire")
     private WebElement payMethod;
 
-
-    public void clickPayMethod(){
-        payMethod.click();
+    public WebElement getPayMethod(){
+        return payMethod;
     }
 
     public String getPayMethodTitle() {

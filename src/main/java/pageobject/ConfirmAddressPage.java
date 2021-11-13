@@ -12,7 +12,6 @@ public class ConfirmAddressPage extends AbstractPage{
 
     public ConfirmAddressPage(WebDriver driver){
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//*[@id='center_column']/h1")

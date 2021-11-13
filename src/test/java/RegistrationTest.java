@@ -34,11 +34,11 @@ public class RegistrationTest {
         @Test
         public void registrationTest() {
 
-            loginPage.clickSignInOnMainPage();
+            loginPage.clickIt(loginPage.getLoginButton());
             loginPage.fillEmailForCreate();
-            loginPage.clickCreateButton();
+            loginPage.clickIt(loginPage.getCreateButton());
             registrationPage.fillMandatoryFields();
-            registrationPage.clickSubmitButton();
+            registrationPage.clickIt(registrationPage.getSubmitButton());
 
 
             String user = userHomePage.getUserName();
@@ -47,7 +47,7 @@ public class RegistrationTest {
 
         @AfterClass
         public static void tearDown () {
-            userHomePage.clickLogoutButton();
+            userHomePage.clickIt(userHomePage.getLogoutButton());
             driver.quit();
         }
 }

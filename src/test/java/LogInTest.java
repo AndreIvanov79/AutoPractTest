@@ -33,10 +33,10 @@ public class LogInTest {
     @Test
     public void loginTest() {
 
-        loginPage.clickSignInOnMainPage();
-        loginPage.inputEmailO();
+        loginPage.clickIt(loginPage.getLoginButton());
+        loginPage.inputEmail();
         loginPage.inputPassword();
-        loginPage.clickSignInButton();
+        loginPage.clickIt(loginPage.getSignInButton());
 
         String user = userHomePage.getUserName();
         Assert.assertEquals(PropReader.getProperty("username"), user);

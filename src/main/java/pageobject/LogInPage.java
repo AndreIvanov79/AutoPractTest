@@ -12,7 +12,6 @@ public class LogInPage extends AbstractPage{
 
     public LogInPage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//*[@id='center_column']/h1")
@@ -35,6 +34,18 @@ public class LogInPage extends AbstractPage{
 
     @FindBy(id = "SubmitCreate")
     private WebElement createButton;
+
+    public WebElement getLoginButton(){
+        return loginButton;
+    }
+
+    public WebElement getSignInButton(){
+        return signInButton;
+    }
+
+    public WebElement getCreateButton(){
+        return createButton;
+    }
 
     public void fillEmailForCreate(){
         emailForCreate.sendKeys(DataGenerator.generateRandomEmail(8));
